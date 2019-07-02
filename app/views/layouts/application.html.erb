@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authenticate</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="bg-dark">
+    <div id="page-top">
+    <%if params[:controller] != "devise/sessions"%>
+      <%=render "shared/admin/navbar"%>
+    <%end%>
+      <div id="wrapper">
+        <%if params[:controller] != "devise/sessions"%>
+          <%=render "shared/admin/sidebar"%>
+        <%end%>
+        <%= yield %>
+      </div>
+    </div>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

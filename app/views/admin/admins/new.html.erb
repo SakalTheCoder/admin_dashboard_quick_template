@@ -1,0 +1,14 @@
+<%=form_for ([:admin, @admin]) do |f|%>
+  <%=f.select :role, Admin.roles.keys.map{ |r| [r.capitalize, r]}%>
+  <br>
+  <%=@admin.errors.full_messages%>
+  <%=f.label :email%>
+  <%=f.text_field :email,placeholder: "Email"%> <br><br>
+  <%=f.label :username%>
+  <%=f.text_field :username,placeholder: "UserName"%><br><br>
+  <%=f.label :password%>
+  <%=f.password_field :password%><br><br>
+  <%=f.label :password%>
+  <%=f.password_field :password_confirmation%><br><br>
+  <%=f.submit%>
+<%end%>
