@@ -22,15 +22,16 @@
                 <thead>
                   <tr>
                     <th>Name</th>
+                    <th>Email</th>
                     <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
                   </tr>
                 </thead>
                 <tbody>
-
+                  <%@admins.each do |admin|%>
+                    <td><%=admin.username%></td>
+                    <td><%=admin.email%></td>
+                    <td><%=admin.role%></td>
+                  <%end%>
                 </tbody>
               </table>
             </div>
