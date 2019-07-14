@@ -5,6 +5,8 @@ class Admin::AdminsController < ApplicationController
     @admins = Admin.all
   end
   def show
+    flash.now[:Alert] = "Successful"
+    redirect_to admin_admins_path
   end
   def new
     @admin = Admin.new

@@ -28,17 +28,19 @@
                 </thead>
                 <tbody>
                   <%@admins.each do |admin|%>
-                    <td><%=admin.username%></td>
-                    <td><%=admin.email%></td>
-                    <td><%=admin.role%></td>
+                    <tr>
+                      <td><%=admin.username%></td>
+                      <td><%=admin.email%></td>
+                      <td><%=admin.role%></td>
+                    </tr>
                   <%end%>
                 </tbody>
               </table>
             </div>
           </div>
           <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <%= button_to "Add User", new_admin_admin_path, method: 'get', class: "btn btn-primary", style: "width: 100%;"%>
         </div>
-
       </div>
       <!-- /.container-fluid -->
 
