@@ -1,12 +1,60 @@
-<%=form_for ([:admin, @admin]) do |f|%>
-  <%=@admin.errors.full_messages%> 
-  <%=f.label :email%>
-  <%=f.text_field :email,placeholder: "Email"%> <br><br>
-  <%=f.label :username%>
-  <%=f.text_field :username,placeholder: "UserName"%><br><br>
-  <%=f.label :password%>
-  <%=f.password_field :password%><br><br>
-  <%=f.label :password%>
-  <%=f.password_field :password_confirmation%><br><br>
-  <%=f.submit%>
-<%end%>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Add user</li>
+        </ol>
+        <div class="row">
+          <div class="col-lg-6">
+            <%=form_for ([:admin, @admin]) do |f|%>
+            <div class="row">
+              <div class="form-group col-lg-6">
+                <%=f.label :role%>
+                <%=f.select :role, Admin.roles.keys.map{ |r| [r.capitalize, r]},{},class: "form-control"%>
+              </div>
+              <div class="form-group col-lg-6">
+                <%=f.label :email%>
+                <%=f.text_field :email,placeholder: "Email",class: "form-control"%>
+              </div>
+              <div class="form-group col-lg-12">
+                <%=f.label :username%>
+                <%=f.text_field :username,placeholder: "UserName",class: "form-control"%>
+              </div>
+              <div class="form-group col-lg-12">
+                <%=f.label :password%>
+                <%=f.password_field :password,class: "form-control"%>
+              </div>
+              <div class="form-group col-lg-12">
+                <%=f.label :password%>
+                <%=f.password_field :password_confirmation,class: "form-control"%>
+              </div>
+              <div class="form-group col-lg-12">
+                <%=f.submit "edit user", class: "btn btn-secondary"%>
+              </div>
+            </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->

@@ -31,7 +31,9 @@
                     <tr>
                       <td><%=admin.username%></td>
                       <td><%=admin.email%></td>
-                      <td><%=admin.role%></td>
+                      <td><%=admin.role%>
+                        <%=link_to "<i class=\"fas fa-bars\"></i>".html_safe, edit_admin_admin_path(admin) ,class: "btn btn-link",style: "float: right;"%>
+                      </td>
                     </tr>
                   <%end%>
                 </tbody>
