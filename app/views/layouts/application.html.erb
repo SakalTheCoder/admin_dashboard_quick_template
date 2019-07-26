@@ -11,6 +11,7 @@
     <div id="page-top">
     <%if params[:controller] != "devise/sessions"%>
       <%=render "shared/admin/navbar"%>
+      <%=render "shared/admin/sidebar"%>
     <%end%>
         <%= yield %>
     </div>
