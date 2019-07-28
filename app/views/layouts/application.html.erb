@@ -6,12 +6,13 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <%flash.each do |key, message|%>
+    <div class="alert alert-primary" style="margin: 0;"><%= message %></div>
+  <%end%>
   <body class="bg-dark">
     <div id="page-top">
     <%if params[:controller] != "devise/sessions"%>
       <%=render "shared/admin/navbar"%>
-      <%=render "shared/admin/sidebar"%>
     <%end%>
         <%= yield %>
     </div>

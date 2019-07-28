@@ -33,6 +33,7 @@
                       <td><%=admin.email%></td>
                       <td><%=admin.role%>
                         <%=link_to "<i class=\"fas fa-bars\"></i>".html_safe, edit_admin_admin_path(admin) ,class: "btn btn-link",style: "float: right;"%>
+                        <%=link_to "<i class=\"fas fa-trash\"></i>".html_safe, admin_admin_path(admin) ,method: :delete,class: "btn btn-link",style: "float: right;"%>
                       </td>
                     </tr>
                   <%end%>

@@ -6,7 +6,7 @@ class Admin::AdminsController < ApplicationController
   end
   def show
     redirect_to admin_admins_path
-    flash.now[:Alert] = "Successful"
+    flash[:alert] = "Successful"
   end
   def new
     @admin = Admin.new
@@ -20,6 +20,15 @@ class Admin::AdminsController < ApplicationController
     end
   end
   def destroy
+    admin = Admin.find(params[:id])
+    if(admin.role == "user")
+      admin.destroy
+      flash[:success] = "User Deleted Successfully"
+      redirect_to admin_admins_path
+    else
+      flash[:alert] = "Admin User Can NOT Be Deleted"
+      redirect_to admin_admins_path
+    end
   end
   def edit
     @admin = Admin.find(params[:id])
